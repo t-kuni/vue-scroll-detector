@@ -47,7 +47,9 @@ export default Vue.extend({
                        @leave-client-rect="onLeaveClientRect"
                        @near-client-rect="onNearClientRect"
                        @far-client-rect="onFarClientRect"
-                       :check-when-mounted="false"
+                       :check-when-mounted="true"
+                       :delay-check-when-mounted="1000"
+                       :near-range="1"
                        style="display: inline-block; height: 200px; width: 400px">
         <div style="background-color: black; height: 200px; width: 400px;"></div>
       </scroll-detector>

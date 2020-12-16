@@ -8,13 +8,25 @@ export default {
     window.addEventListener('scroll', this.handleScroll);
 
     if (this.checkWhenMounted) {
-      this.handleScroll();
+      if (this.delayCheckWhenMounted) {
+        setTimeout(() => this.handleScroll(), this.delayCheckWhenMounted);
+      } else {
+        this.handleScroll();
+      }
     }
   },
   props: {
     checkWhenMounted: {
       type: Boolean,
       default: true,
+    },
+    delayCheckWhenMounted: {
+      type: Number,
+      default: null,
+    },
+    nearRange: {
+      type: Number,
+      default: 1,
     }
   },
   data() {
@@ -83,8 +95,8 @@ export default {
       return checkY && checkX;
     },
     checkNear(rect) {
-      const EX_Y = Math.floor(window.innerHeight / 2);
-      const EX_X = Math.floor(window.innerWidth / 2);
+      const EX_Y = Math.floor(window.innerHeight * this.nearRange);
+      const EX_X = Math.floor(window.innerWidth * this.nearRange);
       const H = window.innerHeight;
       const W = window.innerWidth;
       const t = rect.top;
