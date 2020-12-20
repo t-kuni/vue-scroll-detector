@@ -8,6 +8,10 @@ Scroll detector is component to emit event when the component enter client recta
 
 ## Usage
 
+```bash
+npm install --save vue-scroll-detector
+```
+
 ```html
 <scroll-detector @enter-client-rect="onEnter">
     <!-- Your content -->
@@ -15,7 +19,12 @@ Scroll detector is component to emit event when the component enter client recta
 ``` 
 
 ```javascript
+import ScrollDetector from "vue-scroll-detector";
+
 export default {
+    components: {
+      ScrollDetector,
+    },
     methods: {
         onEnter() {
             console.log('detect enter client rect');
