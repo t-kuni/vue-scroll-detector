@@ -1,6 +1,6 @@
 {
   "name": "vue-scroll-detector",
-  "version": "2.0.2",
+  "version": "2.0.3",
   "description": "",
   "main": "dist/scroll-detector.ssr.js",
   "browser": "dist/scroll-detector.esm.js",
