@@ -40,5 +40,9 @@
   },
   "engines": {
     "node": ">=10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/t-kuni/vue-scroll-detector.git"
   }
 }
